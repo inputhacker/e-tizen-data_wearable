@@ -83,6 +83,8 @@ ln -sf ../display-manager.service %{_unitdir}/graphical.target.wants/
 %__mkdir_p %{_unitdir_user}/default.target.wants
 ln -sf ../enlightenment-user.path %{_unitdir_user}/default.target.wants/
 
+rm -rf %{_localstatedir}/lib/enlightenment
+
 %postun
 rm -f %{_unitdir}/graphical.target.wants/display-manager.service
 rm -f %{_unitdir_user}/default.target.wants/enlightenment-user.path
