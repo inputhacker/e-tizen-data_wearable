@@ -80,14 +80,14 @@ getent passwd %{daemon_user} >/dev/null || %{_sbindir}/useradd -r -g %{daemon_gr
 %__mkdir_p %{_unitdir}/graphical.target.wants/
 ln -sf ../display-manager.service %{_unitdir}/graphical.target.wants/
 
-%__mkdir_p %{_unitdir_user}/default.target.wants
-ln -sf ../enlightenment-user.path %{_unitdir_user}/default.target.wants/
+%__mkdir_p %{_unitdir_user}/basic.target.wants
+ln -sf ../enlightenment-user.path %{_unitdir_user}/basic.target.wants/
 
 rm -rf %{_localstatedir}/lib/enlightenment
 
 %postun
 rm -f %{_unitdir}/graphical.target.wants/display-manager.service
-rm -f %{_unitdir_user}/default.target.wants/enlightenment-user.path
+rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.path
 
 %files
 %manifest %{name}.manifest
