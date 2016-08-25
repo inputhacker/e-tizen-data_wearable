@@ -1,7 +1,7 @@
 [Unit]
 Description=Creating a link file for user to access wayland-0
 DefaultDependencies=no
-Before=stater.service
+Before=starter.service
 
 [Service]
 Type=oneshot
