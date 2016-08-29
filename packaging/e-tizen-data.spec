@@ -59,7 +59,6 @@ install -m 644 data/units/display-manager.service %{buildroot}%{_unitdir}
 
 %__mkdir_p %{buildroot}%{_unitdir_user}
 install -m 644 data/units/enlightenment-user.service %{buildroot}%{_unitdir_user}
-install -m 644 data/units/enlightenment-user.path %{buildroot}%{_unitdir_user}
 
 # install env file for service
 %__mkdir_p %{buildroot}%{_sysconfdir}/sysconfig
@@ -81,13 +80,13 @@ getent passwd %{daemon_user} >/dev/null || %{_sbindir}/useradd -r -g %{daemon_gr
 ln -sf ../display-manager.service %{_unitdir}/graphical.target.wants/
 
 %__mkdir_p %{_unitdir_user}/basic.target.wants
-ln -sf ../enlightenment-user.path %{_unitdir_user}/basic.target.wants/
+ln -sf ../enlightenment-user.service %{_unitdir_user}/basic.target.wants/
 
 rm -rf %{_localstatedir}/lib/enlightenment
 
 %postun
 rm -f %{_unitdir}/graphical.target.wants/display-manager.service
-rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.path
+rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
 %files
 %manifest %{name}.manifest
@@ -99,7 +98,6 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.path
 %{TZ_SYS_RO_SHARE}/enlightenment/data/config/*.cfg
 %{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable/*.cfg
 %{_unitdir}/display-manager.service
-%{_unitdir_user}/enlightenment-user.path
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
