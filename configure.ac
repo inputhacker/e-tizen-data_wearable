@@ -60,12 +60,6 @@ enabled_modules='group "modules" list {
      value "priority" int: 0;
    }
    group "E_Config_Module" struct {
-     value "name" string: "e-mod-tizen-eom";
-     value "enabled" uchar: 1;
-     value "delayed" uchar: 0;
-     value "priority" int: 0;
-   }
-   group "E_Config_Module" struct {
      value "name" string: "e-mod-tizen-wl-textinput";
      value "enabled" uchar: 1;
      value "delayed" uchar: 0;
