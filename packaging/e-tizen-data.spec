@@ -1,12 +1,15 @@
-Name:          e-tizen-data
-Version:       0.3.16
+%define alias e-tizen-data
+
+Name:          e-tizen-data-profile_wearable
+Version:       0.3.17
 Release:       0
+Provides:      e-tizen-data = %{version}-%{release}
 BuildArch:     noarch
 Summary:       Enlightenment data files
 Group:         Graphics & UI Framework/Other
 License:       BSD-2-Clause
 Source0:       %{name}-%{version}.tar.gz
-Source1001:    %{name}.manifest
+Source1001:    %{alias}.manifest
 BuildRequires: pkgconfig(eet)
 BuildRequires: pkgconfig(edje)
 BuildRequires: eet-bin
@@ -14,7 +17,7 @@ BuildRequires: edje-tools
 BuildRequires: xkb-tizen-data
 Requires:      enlightenment
 
-%global TZ_SYS_RO_SHARE  %{?TZ_SYS_RO_SHARE:%TZ_SYS_RO_SHARE}%{!?TZ_SYS_RO_SHARE:/usr/share}
+%{!?TZ_SYS_RO_SHARE: %global TZ_SYS_RO_SHARE /usr/share}
 
 %description
 Data and configuration files for enlightenment
@@ -40,7 +43,7 @@ rm -rf %{buildroot}
 
 #for license notification
 mkdir -p %{buildroot}/%{TZ_SYS_RO_SHARE}/license
-cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/license/%{name}
+cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/license/%{alias}
 
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
@@ -89,9 +92,9 @@ rm -f %{_unitdir}/graphical.target.wants/display-manager.service
 rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
 %files
-%manifest %{name}.manifest
+%manifest %{alias}.manifest
 %defattr(-,root,root,-)
-%{TZ_SYS_RO_SHARE}/license/%{name}
+%{TZ_SYS_RO_SHARE}/license/%{alias}
 %{TZ_SYS_RO_SHARE}/enlightenment/data
 %{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds/*.edj
 %{TZ_SYS_RO_SHARE}/enlightenment/data/themes/*.edj
