@@ -14,7 +14,7 @@ BuildRequires: pkgconfig(eet)
 BuildRequires: pkgconfig(edje)
 BuildRequires: eet-bin
 BuildRequires: edje-tools
-BuildRequires: xkb-tizen-data
+BuildRequires: xkb-tizen-data-profile_wearable
 Requires:      enlightenment
 
 %{!?TZ_SYS_RO_SHARE: %global TZ_SYS_RO_SHARE /usr/share}
