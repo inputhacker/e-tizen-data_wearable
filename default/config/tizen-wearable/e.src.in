@@ -142,6 +142,7 @@ group "E_Config" struct {
   value "comp_canvas_bg.b" uchar: 0;
   value "comp_canvas_bg.a" uchar: 255;
   value "comp_canvas_bg.opmode" int: 0;
+  value "conformant_ack_timeout" double: 3.0;
   group "sock_accesses" list {
     group "E_Config_Socket_Access" struct {
       value "sock_access.use" uchar: 1;
