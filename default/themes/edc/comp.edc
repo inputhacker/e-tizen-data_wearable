@@ -433,9 +433,29 @@ group { name: "e/comp/frame/popup/fast";
 }
 
 group { name: "e/comp/frame/none";
+   script {
+      public message(Msg_Type:type, id, ...) {
+           if ((type == MSG_INT_SET) && (id == 0)) {
+                new offx, offy;
+                offx = getarg(2);
+                offy = getarg(3);
+                custom_state(PART:"e.swallow.indicator", "default", 0.0);
+                set_state_val(PART:"e.swallow.indicator", STATE_REL2_OFFSET, offx, offy);
+                set_state(PART:"e.swallow.indicator", "custom", 0.0);
+         }
+      }
+   }
    parts {
       part { name: "e.swallow.content"; type: SWALLOW;
          description { state: "default" 0.0;
+         }
+      }
+      part { name: "e.swallow.indicator"; type: SWALLOW; mouse_events: 0;
+         description { state: "default" 0.0;
+              rel1.to: "e.swallow.content";
+              rel2.to: "e.swallow.content";
+              rel1.relative: 0.0 0.0;
+              rel2.relative: 0.0 0.0;
          }
       }
    }
