@@ -93,9 +93,13 @@ group "E_Config" struct {
   value "scale.min" double: 0.8;
   value "scale.max" double: 4.0;
   value "scale.factor" double: 1.0;
+  value "scale.profile_factor" double: 0.4;
+  value "scale.inch_correction" double: 0.0;
+  value "scale.inch_correction_bound" double: 0.0;
   value "scale.base_dpi" int: 90;
   value "scale.use_dpi" uchar: 1;
   value "scale.use_custom" uchar: 0;
+  value "scale.for_tdm" uchar: 1;
   value "show_cursor" uchar: 0;
   value "idle_cursor" uchar: 1;
   group "env_vars" list {
