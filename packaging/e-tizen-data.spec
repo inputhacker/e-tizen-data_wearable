@@ -1,12 +1,15 @@
-Name:          e-tizen-data
+%define alias e-tizen-data
+
+Name:          e-tizen-data-profile_wearable
 Version:       0.3.19
 Release:       0
+Provides:      e-tizen-data = %{version}-%{release}
 BuildArch:     noarch
 Summary:       Enlightenment data files
 Group:         Graphics & UI Framework/Other
 License:       BSD-2-Clause
 Source0:       %{name}-%{version}.tar.gz
-Source1001:    %{name}.manifest
+Source1001:    %{alias}.manifest
 BuildRequires: pkgconfig(eet)
 BuildRequires: pkgconfig(edje)
 BuildRequires: eet-bin
@@ -14,7 +17,7 @@ BuildRequires: edje-tools
 BuildRequires: xkb-tizen-data
 Requires:      enlightenment
 
-%global TZ_SYS_RO_SHARE  %{?TZ_SYS_RO_SHARE:%TZ_SYS_RO_SHARE}%{!?TZ_SYS_RO_SHARE:/usr/share}
+%{!?TZ_SYS_RO_SHARE: %global TZ_SYS_RO_SHARE /usr/share}
 
 %description
 Data and configuration files for enlightenment
@@ -85,7 +88,7 @@ rm -f %{_unitdir}/graphical.target.wants/display-manager.service
 rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
 %files
-%manifest %{name}.manifest
+%manifest %{alias}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{TZ_SYS_RO_SHARE}/enlightenment/data
