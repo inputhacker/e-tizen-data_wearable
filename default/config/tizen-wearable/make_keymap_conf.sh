@@ -5,7 +5,7 @@ if [ "$TZ_SYS_RO_SHARE" = "" ]; then
 fi
 
 TIZEN_PROFILE="wearable"
-KEYMAP_FILE_PATH="${TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt"
+KEYMAP_FILE_PATH="${TZ_SYS_RO_SHARE}/X11/xkb/tizen_key_layout.txt.${TIZEN_PROFILE}"
 NUM_KEYCODE=0
 MAX_KEYCODE=0
 KEYROUTER_CONFIG_FILE_PATH="default/config/tizen-${TIZEN_PROFILE}/module.keyrouter.src"
