@@ -38,10 +38,6 @@ make
 %install
 rm -rf %{buildroot}
 
-#for license notification
-mkdir -p %{buildroot}/%{TZ_SYS_RO_SHARE}/license
-cp -a %{_builddir}/%{buildsubdir}/COPYING %{buildroot}/%{TZ_SYS_RO_SHARE}/license/%{name}
-
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
@@ -91,7 +87,7 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-%{TZ_SYS_RO_SHARE}/license/%{name}
+%license COPYING
 %{TZ_SYS_RO_SHARE}/enlightenment/data
 %{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds/*.edj
 %{TZ_SYS_RO_SHARE}/enlightenment/data/themes/*.edj
