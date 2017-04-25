@@ -126,8 +126,8 @@ group "E_Config" struct {
   value "cursor_timer_interval" int: 5;
   group "client_types" list {
     group "E_Config_Client_Type" struct {
-      value "name" string: "HOME_SCREEN";
-      value "clas" string: "HOME_SCREEN";
+      value "name" string: "W-Home";
+      value "clas" string: "W-Home";
       value "window_type" int: 8;
       value "client_type" int: 1;
     }
