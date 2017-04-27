@@ -226,7 +226,7 @@ group "Comp_Config" struct {
     value "effect_file" string: "/usr/share/enlightenment/data/themes/effect.edj";
     value "effect_style" string: "zoom";
     value "depth_in_style" string: "fade";
-    value "bg_effect_style" string: "background-zoom";
+    value "bg_effect_style" string: "background-zoom-fade";
     value "engine" int: @COMP_ENGINE@;
     value "max_unmapped_time" int: 36000;
     value "min_unmapped_time" int: 300;
