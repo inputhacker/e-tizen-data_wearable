@@ -62,7 +62,7 @@ group "E_Config" struct {
   value "ping_clients" int: 1;
   value "use_e_cursor" int: 1;
   value "cursor_size" int: 32;
-  value "transient.move" int: 1;
+  value "transient.move" int: 0;
   value "transient.resize" int: 0;
   value "transient.raise" int: 1;
   value "transient.lower" int: 1;
