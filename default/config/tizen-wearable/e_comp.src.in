@@ -224,7 +224,7 @@ group "Comp_Config" struct {
     value "version" int: 1;
     value "shadow_style" string: "none";
     value "effect_file" string: "/usr/share/enlightenment/data/themes/effect.edj";
-    value "effect_style" string: "zoom";
+    value "effect_style" string: "zoom-easeout";
     value "depth_in_style" string: "fade";
     value "bg_effect_style" string: "background-zoom-fade";
     value "engine" int: @COMP_ENGINE@;
