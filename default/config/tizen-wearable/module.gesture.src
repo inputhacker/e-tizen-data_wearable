@@ -1,5 +1,7 @@
 group "Gesture_Config" struct {
 	value "key_device_name" string: "Any";
+	value "event_keep" char: 0;
+
 	value "edge_swipe.time_done" double: 0.5;
 	value "edge_swipe.time_begin" double: 0.01;
 	value "edge_swipe.area_offset" int: 55;
@@ -8,5 +10,15 @@ group "Gesture_Config" struct {
 	value "edge_swipe.compose_key" int: 124;
 	value "edge_swipe.back_key" int: 166;
 	value "edge_swipe.default_enable_back" char: 1;
-	value "edge_swipe.event_keep" char: 0;
+
+	value "tap.repeats_max" int: 3;
+	value "tap.time_start" double: 0.05;
+	value "tap.time_done" double: 1.0;
+	value "tap.time_interval" double: 1.0;
+	value "tap.moving_range" int: 25;
+
+	value "pan.time_start" double: 0.05;
+	value "pan.moving_range" int: 15;
+
+	value "pinch.moving_distance_range" double: 15.0
 }
