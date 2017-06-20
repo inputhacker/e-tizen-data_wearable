@@ -6,6 +6,7 @@ Type=notify
 NotifyAccess=all
 EnvironmentFile=/etc/sysconfig/enlightenment
 SmackProcessLabel=System
+ExecStartPre=/usr/bin/keymap_update.sh
 ExecStart=/usr/bin/enlightenment
 ExecStartPost=/usr/bin/touch /run/.wm_ready
 Restart=always
