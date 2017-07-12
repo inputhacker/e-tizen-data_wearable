@@ -126,8 +126,8 @@ group "E_Config" struct {
   value "cursor_timer_interval" int: 5;
   group "client_types" list {
     group "E_Config_Client_Type" struct {
-      value "name" string: "HOME_SCREEN";
-      value "clas" string: "HOME_SCREEN";
+      value "name" string: "W-Home";
+      value "clas" string: "W-Home";
       value "window_type" int: 8;
       value "client_type" int: 1;
     }
@@ -139,15 +139,6 @@ group "E_Config" struct {
     }
   }
   value "comp_shadow_file" string: "/usr/share/enlightenment/data/themes/default.edj";
-  value "sleep_for_dri" int: 0;
-  value "create_wm_ready" int: 0;
-  value "comp_canvas_bg.r" uchar: 0;
-  value "comp_canvas_bg.g" uchar: 0;
-  value "comp_canvas_bg.b" uchar: 0;
-  value "comp_canvas_bg.a" uchar: 255;
-  value "comp_canvas_bg.opmode" int: 0;
-  value "conformant_ack_timeout" double: 3.0;
-  value "save_win_buffer" int: 1;
   group "sock_accesses" list {
     group "E_Config_Socket_Access" struct {
       value "sock_access.use" uchar: 1;
@@ -168,5 +159,19 @@ group "E_Config" struct {
       value "sock_symlink_access.smack.flags" int: 0;
     }
   }
+  value "sleep_for_dri" int: 0;
+  value "create_wm_ready" int: 0;
+  value "comp_canvas_bg.r" uchar: 0;
+  value "comp_canvas_bg.g" uchar: 0;
+  value "comp_canvas_bg.b" uchar: 0;
+  value "comp_canvas_bg.a" uchar: 255;
+  value "comp_canvas_bg.opmode" int: 0;
+  value "use_buffer_flush" int: 0;
+  value "use_module_srv.qp" int: 0;
+  value "conformant_ack_timeout" double: 3.0;
+  value "save_win_buffer" int: 1;
+  value "launchscreen_without_timer" uchar: 0;
+  value "rsm_buffer_release_mode" int: 0;
   value "hold_prev_win_img" int: 0;
+  value "deiconify_approve" int: 0;
 }
