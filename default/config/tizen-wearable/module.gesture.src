@@ -11,6 +11,10 @@ group "Gesture_Config" struct {
 	value "edge_swipe.back_key" int: 166;
 	value "edge_swipe.default_enable_back" char: 1;
 
+	value "edge_drag.time_begin" double: 0.01;
+	value "edge_drag.area_offset" int: 50;
+	value "edge_drag.diff_length" int: 10;
+
 	value "tap.repeats_max" int: 3;
 	value "tap.time_start" double: 0.05;
 	value "tap.time_done" double: 1.0;
