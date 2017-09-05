@@ -52,6 +52,7 @@ rm -rf %{buildroot}
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
+%__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts
 %__mkdir_p %{buildroot}/%{_bindir}
 %__cp -afr data/scripts/winsys_upgrade.sh %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %__cp -afr default/config/*.cfg          %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config
