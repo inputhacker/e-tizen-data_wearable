@@ -1,7 +1,7 @@
 %define alias e-tizen-data
 
 Name:          e-tizen-data-profile_wearable
-Version:       0.4.5
+Version:       0.4.6
 Release:       0
 Provides:      e-tizen-data = %{version}-%{release}
 BuildArch:     noarch
