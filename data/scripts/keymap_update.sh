@@ -78,6 +78,9 @@ function find_cache_files() {
 	return "${_value}"
 }
 
+# Create a keymap cache file directory
+mkdir -p ${KEYMAP_CACHE_FILE_PATH}/compiled/
+
 get_build_version _current_build_version
 get_keymap_version _current_keymap_version
 
