@@ -41,10 +41,12 @@ rm -rf %{buildroot}
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
+%__mkdir_p %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 %__cp -afr default/config/*.cfg          %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config
 %__cp -afr default/config/tizen-wearable/*.cfg %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
 %__cp -afr default/backgrounds/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__cp -afr default/themes/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
+%__cp -afr data/dbus/org.enlightenment.wm.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 
 %define daemon_user display
 %define daemon_group display
@@ -97,3 +99,4 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
+%{_sysconfdir}/dbus-1/system.d/org.enlightenment.wm.conf
