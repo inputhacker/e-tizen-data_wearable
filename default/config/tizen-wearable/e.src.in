@@ -174,5 +174,5 @@ group "E_Config" struct {
   value "launchscreen_without_timer" uchar: 0;
   value "rsm_buffer_release_mode" int: 0;
   value "hold_prev_win_img" int: 0;
-  value "deiconify_approve" int: 0;
+  value "deiconify_approve" int: 1;
 }
