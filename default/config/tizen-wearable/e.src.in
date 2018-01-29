@@ -159,6 +159,42 @@ group "E_Config" struct {
       value "sock_symlink_access.smack.value" string: "";
       value "sock_symlink_access.smack.flags" int: 0;
     }
+    group "E_Config_Socket_Access" struct {
+      value "sock_access.use" uchar: 1;
+      value "sock_access.name" string: "tdm-socket";
+      value "sock_access.permissions" int: 509;    // decimal for 0775 (S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IXOTH)
+      value "sock_access.owner" string: "root";    // uid 0
+      value "sock_access.group" string: "display"; // gid 201
+      value "sock_access.smack.use" uchar: 0;
+      value "sock_access.smack.name" string: "";
+      value "sock_access.smack.value" string: "";
+      value "sock_access.smack.flags" int: 0;
+      value "sock_symlink_access.use" uchar: 0;
+      value "sock_symlink_access.link_name" string: "";
+      value "sock_symlink_access.owner" string: "";
+      value "sock_symlink_access.group" string: "";
+      value "sock_symlink_access.smack.name" string: "";
+      value "sock_symlink_access.smack.value" string: "";
+      value "sock_symlink_access.smack.flags" int: 0;
+    }
+    group "E_Config_Socket_Access" struct {
+      value "sock_access.use" uchar: 1;
+      value "sock_access.name" string: "tbm-drm-auth";
+      value "sock_access.permissions" int: 509;    // decimal for 0775 (S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP | S_IROTH | S_IXOTH)
+      value "sock_access.owner" string: "root";    // uid 0
+      value "sock_access.group" string: "display"; // gid 201
+      value "sock_access.smack.use" uchar: 0;
+      value "sock_access.smack.name" string: "";
+      value "sock_access.smack.value" string: "";
+      value "sock_access.smack.flags" int: 0;
+      value "sock_symlink_access.use" uchar: 0;
+      value "sock_symlink_access.link_name" string: "";
+      value "sock_symlink_access.owner" string: "";
+      value "sock_symlink_access.group" string: "";
+      value "sock_symlink_access.smack.name" string: "";
+      value "sock_symlink_access.smack.value" string: "";
+      value "sock_symlink_access.smack.flags" int: 0;
+    }
   }
   value "sleep_for_dri" int: 0;
   value "create_wm_ready" int: 0;
