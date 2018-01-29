@@ -55,6 +55,7 @@ rm -rf %{buildroot}
 %__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts
 %__mkdir_p %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 %__mkdir_p %{buildroot}/%{_bindir}
+%__mkdir_p %{buildroot}/%{TZ_SYS_RO_SHARE}/tdm
 %__cp -afr data/scripts/winsys_upgrade.sh %{buildroot}/%{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %__cp -afr default/config/*.cfg          %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config
 %__cp -afr default/config/tizen-wearable/*.cfg %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable
@@ -62,6 +63,7 @@ rm -rf %{buildroot}
 %__cp -afr default/themes/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
 %__cp -afr data/scripts/keymap_update.sh %{buildroot}/%{_bindir}
 %__cp -afr data/dbus/org.enlightenment.wm.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d
+%__cp -afr data/tdm/tdm.ini %{buildroot}/%{TZ_SYS_RO_SHARE}/tdm
 
 %define daemon_user display
 %define daemon_group display
@@ -115,5 +117,6 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
+%config %{TZ_SYS_RO_SHARE}/tdm/tdm.ini
 %{_bindir}/keymap_update.sh
 %{_sysconfdir}/dbus-1/system.d/org.enlightenment.wm.conf
