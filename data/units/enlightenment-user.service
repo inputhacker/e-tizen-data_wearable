@@ -5,4 +5,4 @@ Before=starter.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/sh -c "while [ ! -e /run/wayland-0 ] ; do /usr/bin/sleep .1 ; done ;/usr/bin/ln -sf /run/wayland-0 /run/user/%U/"
+ExecStart=/usr/bin/sh -c "while [ ! -e /run/wayland-0 ] ; do /usr/bin/sleep .1 ; done ;/usr/bin/ln -s /run/wayland-0 /run/user/%U/"
