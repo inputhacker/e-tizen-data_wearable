@@ -55,7 +55,7 @@ enabled_modules='group "modules" list {
    }
    group "E_Config_Module" struct {
      value "name" string: "e-mod-tizen-keyrouter";
-     value "enabled" uchar: 1;
+     value "enabled" uchar: 0;
      value "delayed" uchar: 0;
      value "priority" int: 0;
    }
