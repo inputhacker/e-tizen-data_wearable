@@ -1,0 +1,4 @@
+group "Accessibility_Config" struct {
+      value "gesture.quickpanel_area_size" uint: 60;
+      value "gesture.longpress_timeout" float: 0.4;
+}
