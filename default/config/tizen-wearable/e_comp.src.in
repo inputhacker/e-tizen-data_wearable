@@ -268,4 +268,5 @@ group "Comp_Config" struct {
     value "match.disable_menus" uchar: 0;
     value "match.disable_objects" uchar: 0;
     value "input_log_enable" uchar: 0;
+    value "avoid_afill" uchar: 0;
 }
