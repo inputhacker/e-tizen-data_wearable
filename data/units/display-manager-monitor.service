@@ -1,0 +1,15 @@
+[Unit]
+Description=Display manager monitor
+After=display-manager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash -c /usr/bin/enlightenment_mon.sh
+Restart=yes
+RestartSec=1
+StartLimitBurst=5
+StartLimitIntervalSec=10
+
+[Install]
+WantedBy=graphical.target
+

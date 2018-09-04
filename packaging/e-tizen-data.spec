@@ -62,6 +62,7 @@ rm -rf %{buildroot}
 %__cp -afr default/backgrounds/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/backgrounds
 %__cp -afr default/themes/*.edj     %{buildroot}/%{TZ_SYS_RO_SHARE}/enlightenment/data/themes
 %__cp -afr data/scripts/keymap_update.sh %{buildroot}/%{_bindir}
+%__cp -afr data/scripts/enlightenment_mon.sh %{buildroot}/%{_bindir}
 %__cp -afr data/dbus/org.enlightenment.wm.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d
 %__cp -afr data/tdm/tdm.ini %{buildroot}/%{TZ_SYS_RO_SHARE}/tdm
 
@@ -71,6 +72,7 @@ rm -rf %{buildroot}
 # install service
 %__mkdir_p %{buildroot}%{_unitdir}
 install -m 644 data/units/display-manager.service %{buildroot}%{_unitdir}
+install -m 644 data/units/display-manager-monitor.service %{buildroot}%{_unitdir}
 
 %__mkdir_p %{buildroot}%{_unitdir_user}
 install -m 644 data/units/enlightenment-user.service %{buildroot}%{_unitdir_user}
@@ -92,15 +94,17 @@ getent passwd %{daemon_user} >/dev/null || %{_sbindir}/useradd -r -g %{daemon_gr
 
 # setup display manager service
 %__mkdir_p %{_unitdir}/graphical.target.wants/
-ln -sf ../display-manager.service %{_unitdir}/graphical.target.wants/
+ln -sf ../display-manager.service %{_unitdir}/graphical.target.wants/display-manager.service
+ln -sf ../display-manager-monitor.service %{_unitdir}/graphical.target.wants/display-manager-monitor.service
 
 %__mkdir_p %{_unitdir_user}/basic.target.wants
-ln -sf ../enlightenment-user.service %{_unitdir_user}/basic.target.wants/
+ln -sf ../enlightenment-user.service %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
 rm -rf %{_localstatedir}/lib/enlightenment
 
 %postun
 rm -f %{_unitdir}/graphical.target.wants/display-manager.service
+rm -f %{_unitdir}/graphical.target.wants/display-manager-monitor.service
 rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 
 %files
@@ -114,9 +118,11 @@ rm -f %{_unitdir_user}/basic.target.wants/enlightenment-user.service
 %{TZ_SYS_RO_SHARE}/enlightenment/data/config/tizen-wearable/*.cfg
 %{TZ_SYS_RO_SHARE}/upgrade/scripts/500.winsys_upgrade.sh
 %{_unitdir}/display-manager.service
+%{_unitdir}/display-manager-monitor.service
 %{_unitdir_user}/enlightenment-user.service
 %config %{_sysconfdir}/sysconfig/enlightenment
 %config %{_sysconfdir}/profile.d/enlightenment.sh
 %config %{TZ_SYS_RO_SHARE}/tdm/tdm.ini
 %{_bindir}/keymap_update.sh
+%{_bindir}/enlightenment_mon.sh
 %{_sysconfdir}/dbus-1/system.d/org.enlightenment.wm.conf
