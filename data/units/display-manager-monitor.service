@@ -1,6 +1,8 @@
 [Unit]
 Description=Display manager monitor
 After=display-manager.service
+StartLimitBurst=5
+StartLimitIntervalSec=5
 
 [Service]
 Type=simple
@@ -10,10 +12,7 @@ Group=graphic_fw
 Capabilities=cap_sys_ptrace=i
 SecureBits=keep-caps
 ExecStart=/usr/bin/bash -c /usr/bin/enlightenment_mon.sh
-Restart=yes
-RestartSec=1
-StartLimitBurst=5
-StartLimitIntervalSec=10
+Restart=always
 
 [Install]
 WantedBy=graphical.target
