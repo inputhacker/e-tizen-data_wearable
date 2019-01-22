@@ -81,6 +81,19 @@ function find_cache_files() {
 # Create a keymap cache file directory
 mkdir -p ${KEYMAP_CACHE_FILE_PATH}/compiled/
 
+if [ -e ${KEYMAP_CACHE_FILE_PATH}/compiled/ ]
+then
+	:
+else
+# There are some problems in system if mkdir is failed.
+# sometimes some partition is not mounted, in that case do not make cache
+	echo "keymap_update is failed. cannot create ${KEYMAP_CACHE_FILE_PATH}/"
+	echo "This system couldn't use keymap cache, so booting time will be increase"
+# Altought cannot using keymap cache, enlightenment will be processed successfully,
+# so return true in this script
+	exit 0
+fi
+
 get_build_version _current_build_version
 get_keymap_version _current_keymap_version
 
