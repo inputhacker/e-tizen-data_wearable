@@ -1,4 +1,6 @@
 group "Devicemgr_Config" struct {
   value "input.button_remap_enable" uchar: 1;
+  value "input.virtual_key_device_enable" uchar: 0;
+  value "input.virtual_mouse_device_enable" uchar: 0;
   value "input.back_keycode" int: 166;
 }
