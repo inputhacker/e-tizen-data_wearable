@@ -211,4 +211,6 @@ group "E_Config" struct {
   value "rsm_buffer_release_mode" int: 0;
   value "hold_prev_win_img" int: 1;
   value "deiconify_approve" int: 1;
+  value "gesture_service.wait_time" double: 0.1;
+  value "gesture_service.wait_dist" int: 50;
 }
