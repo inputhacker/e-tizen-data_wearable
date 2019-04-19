@@ -1,3 +1,5 @@
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
 if [ "$USER" == "root" ]; then
 	export XDG_RUNTIME_DIR=/run
 else
