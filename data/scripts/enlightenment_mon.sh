@@ -1,5 +1,7 @@
 ######!/bin/bash
 
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
 function read_line_from_file()
 {
 	while IFS='' read -r line || [[ -n "$line" ]]; do

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
 source /usr/share/upgrade/rw-update-macro.inc
 get_version_info
 

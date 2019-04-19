@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
 KEYMAP_CACHE_FILE_PATH="/var/lib/xkb/"
 BUILTIN_KEYMAP_CACHE_FILE_PATH="/usr/share/X11/xkb/"
 KEYMAP_CACHE_VERSION_FILE="${KEYMAP_CACHE_FILE_PATH}cache_version.txt"
