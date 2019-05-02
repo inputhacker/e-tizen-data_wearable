@@ -213,4 +213,7 @@ group "E_Config" struct {
   value "deiconify_approve" int: 1;
   value "gesture_service.wait_time" double: 0.1;
   value "gesture_service.wait_dist" int: 50;
+  value "configured_output_resolution.use" int: 0;
+  value "configured_output_resolution.w" int: 0;
+  value "configured_output_resolution.h" int: 0;
 }
